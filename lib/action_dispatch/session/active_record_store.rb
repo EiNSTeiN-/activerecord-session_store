@@ -125,7 +125,6 @@ module ActionDispatch
           if !model
             id = generate_sid
             model = @@session_class.new(:session_id => id, :data => {})
-            model.save
           end
           if request.env[ENV_SESSION_OPTIONS_KEY][:id].nil?
             request.env[SESSION_RECORD_KEY] = model
